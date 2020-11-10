@@ -12,8 +12,7 @@ async def getToken():
 			await discordWS.send_str(json.dumps({'cmd': 'SUBSCRIBE', 'args': {}, 'evt': 'OVERLAY', 'nonce': 1}))
 			await discordWS.send_str(json.dumps({'cmd': 'OVERLAY', 'args': {'type': 'CONNECT', 'pid': 0}, 'nonce': 1}))
 			async for message in discordWS:
-				messageJSON = message.json()
-				try: return messageJSON['data']['payloads'][0]['token']
+				try: return message.json()['data']['payloads'][0]['token']
 				except: continue
 
 @bot.event

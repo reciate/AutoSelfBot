@@ -1,4 +1,4 @@
-# AutoSelfBot
+# AutoSelfBot (Patched)
 A Discord SelfBot that works out of the box.
 
 ## Explanation
